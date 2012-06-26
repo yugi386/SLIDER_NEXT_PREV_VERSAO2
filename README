@@ -1,0 +1,14 @@
+﻿============================================================
+Slider - Treinamento Padawan - versão dois
+============================================================
+Este Slider tem um botão prev e outro Next para navegação das imagens!
+Também não foi feita chamada javascript no código HTML.
+============================================================	
+Foram seguidas observações do Marcelo:
+============================================================	
+- Você está colocando a referência das imagens como id diretamente nelas e nos links da navegação, isso não é legal, porque essas imagens podem vir dinamicamente de um banco de dados.
+- Tenta automatizar seu script, fazer com que ele pegue a referência dinamicamente.
+- Você está dando o loop nas imagens toda vez que clicamos no link, isso não é necessário, dá uma olhada quanto a isso também.
+============================================================	
+by Yugi!!!
+============================================================
