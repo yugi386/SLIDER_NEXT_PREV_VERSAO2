@@ -9,7 +9,7 @@ body {
 
 #content img{
 	display: none;	
-	opacity: 1;
+	opacity: 0;
 }
 
 #content{

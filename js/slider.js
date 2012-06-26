@@ -7,7 +7,9 @@ DATA: 25/06/2012
 */
 slideCurrent = 0;				//	controla qual imagem vai aparacer no slide
 slidePrevious = 4;				//	controla a imagem que deixa o slide
-window.onload= function() {	initSlider(); }	// iniciando o slider
+window.onload= function() {	initSlider();}	// iniciando o slider
+
+setInterval(function(){ fade(); },150);
 
 // *****************************************************************************
 function browseSlider(){	//	mostra as imagens no slider
@@ -17,13 +19,13 @@ function browseSlider(){	//	mostra as imagens no slider
 	
 		img[slideCurrent].style.display = "inline";
 		opc = kcontent.getElementsByTagName("li")[slideCurrent+1];	//	listando links...
-		opc.className = 'active';					//	altera classe do link ativo para classe [active]
-		// img[slideCurrent].style.opacity = 1;		//	opacidade 1
+		opc.className = 'active';									//	altera classe do link ativo para classe [active]
 
 		if (slidePrevious != slideCurrent){
 			img[slidePrevious].style.display = "none";	
 			opc = kcontent.getElementsByTagName("li")[slidePrevious+1];	//	listando links...
 			opc.className = '';											// elimina classe dos links inativos
+		    img[slidePrevious].style.opacity = 0;						//	opacidade 0
 		}	
 }
 // *****************************************************************************
@@ -65,5 +67,15 @@ function navSlider(tipo) {	//	navegador prev e Next
 		}
 	}
 	browseSlider();
+}
+// *****************************************************************************
+function fade() {	//	adicionando efeito fade mas imagens do slide
+	var kcontent = document.getElementById('content');
+	var img = kcontent.getElementsByTagName("img");
+
+	if (Number(img[slideCurrent].style.opacity) < 1) {
+		img[slideCurrent].style.opacity = Number(img[slideCurrent].style.opacity) + 0.25;
+	};		
+
 }
 // *****************************************************************************
